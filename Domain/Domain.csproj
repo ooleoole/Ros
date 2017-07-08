@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9867CAAA-F280-4A99-A029-AA15D116566C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Domain</RootNamespace>
+    <AssemblyName>Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.0.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.0.2\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="RefactorThis.GraphDiff, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RefactorThis.GraphDiff.2.0.1\lib\RefactorThis.GraphDiff.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\AddressDTO.cs" />
+    <Compile Include="Entities\BoatDTO.cs" />
+    <Compile Include="Entities\ClubDTO.cs" />
+    <Compile Include="Entities\EmailDTO.cs" />
+    <Compile Include="Entities\EntryDTO.cs" />
+    <Compile Include="Entities\Junctions\Clubs_Emails.cs" />
+    <Compile Include="Entities\Junctions\Clubs_PhoneNumbers.cs" />
+    <Compile Include="Entities\Junctions\Clubs_Users_UserRoles_JunctionsDTO.cs" />
+    <Compile Include="Entities\Junctions\RaceEvents_Users_UserRoles_JunctionsDTO.cs" />
+    <Compile Include="Entities\Junctions\Regattas_EntriesDTO.cs" />
+    <Compile Include="Entities\Junctions\Regattas_Users_UserRoles_JunctionsDTO.cs" />
+    <Compile Include="Entities\Junctions\RegisteredUserDTO.cs" />
+    <Compile Include="Entities\Junctions\RegisteredUsers_SocialEventsDTO.cs" />
+    <Compile Include="Entities\Junctions\SocialEvents_Users_UserRoles_JunctionsDTO.cs" />
+    <Compile Include="Entities\Junctions\Teams_RaceEventsDTO.cs" />
+    <Compile Include="Entities\Junctions\Teams_RegisteredUsersDTO.cs" />
+    <Compile Include="Entities\PhoneNumberDTO.cs" />
+    <Compile Include="Entities\RaceEventDTO.cs" />
+    <Compile Include="Entities\RegattaDTO.cs" />
+    <Compile Include="Entities\ResultDTO.cs" />
+    <Compile Include="Entities\SocialEventDTO.cs" />
+    <Compile Include="Entities\TeamDTO.cs" />
+    <Compile Include="Entities\UserDTO.cs" />
+    <Compile Include="Entities\UserRoleDTO.cs" />
+    <Compile Include="Enums\Roles.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Interfaces\Entities\IAddress.cs" />
+    <Compile Include="Interfaces\Entities\IBoat.cs" />
+    <Compile Include="Interfaces\Entities\IClub.cs" />
+    <Compile Include="Interfaces\Entities\IDboInfo.cs" />
+    <Compile Include="Interfaces\Entities\IEmail.cs" />
+    <Compile Include="Interfaces\Entities\IEntityDTO.cs" />
+    <Compile Include="Interfaces\Entities\IEntry.cs" />
+    <Compile Include="Interfaces\Entities\IPhoneNumber.cs" />
+    <Compile Include="Interfaces\Entities\IRaceEvent.cs" />
+    <Compile Include="Interfaces\Entities\IRegatta.cs" />
+    <Compile Include="Interfaces\Entities\IResult.cs" />
+    <Compile Include="Interfaces\Entities\ISocialEvent.cs" />
+    <Compile Include="Interfaces\Entities\ITeam.cs" />
+    <Compile Include="Interfaces\Entities\IUser.cs" />
+    <Compile Include="Interfaces\Entities\IUserRole.cs" />
+    <Compile Include="Interfaces\IContext.cs" />
+    <Compile Include="Interfaces\IPermissionTarget.cs" />
+    <Compile Include="Interfaces\IRoleHandler.cs" />
+    <Compile Include="Interfaces\IRoleJunction.cs" />
+    <Compile Include="Mappings\Profiles\MapperProfiles.cs" />
+    <Compile Include="Interfaces\Repositories\IEagerDisconnectedRepository.cs" />
+    <Compile Include="Interfaces\Repositories\ILazyConnectedRepository.cs" />
+    <Compile Include="Interfaces\Repositories\IRepository.cs" />
+    <Compile Include="Interfaces\Service\IEagerDisconnectedService.cs" />
+    <Compile Include="Interfaces\Service\IInternalService.cs" />
+    <Compile Include="Interfaces\Service\ILazyConnectedService.cs" />
+    <Compile Include="Interfaces\Service\IService.cs" />
+    <Compile Include="Interfaces\Service\IServiceSelector.cs" />
+    <Compile Include="Interfaces\IPermissions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ConnectedLazyRepository.cs" />
+    <Compile Include="Repositories\EagerDisconnectedRepository.cs" />
+    <Compile Include="Services\AddressServices\AddressService.cs" />
+    <Compile Include="Services\AddressServices\EagerDisconnectedAddressService.cs" />
+    <Compile Include="Services\AddressServices\LazyConnectedAddressService.cs" />
+    <Compile Include="Services\AggregatRoots\ClubServices\ClubService.cs" />
+    <Compile Include="Services\AggregatRoots\ClubServices\EagerDisconnectedClubService.cs" />
+    <Compile Include="Services\AggregatRoots\ClubServices\LazyConnectedClubService.cs" />
+    <Compile Include="Services\AggregatRoots\EntryServices\EagerDisconnectedEntryService.cs" />
+    <Compile Include="Services\AggregatRoots\EntryServices\EntryService.cs" />
+    <Compile Include="Services\AggregatRoots\EntryServices\LazyConnectedEntryService.cs" />
+    <Compile Include="Services\AggregatRoots\RaceEventServices\EagerDisconnectedRaceEventService.cs" />
+    <Compile Include="Services\AggregatRoots\RaceEventServices\LazyConnectedRaceEventService.cs" />
+    <Compile Include="Services\AggregatRoots\RaceEventServices\RaceEventService.cs" />
+    <Compile Include="Services\AggregatRoots\RegattaServices\EagerDisconnectedRegattaService.cs" />
+    <Compile Include="Services\AggregatRoots\RegattaServices\LazyConnectedRegattaService.cs" />
+    <Compile Include="Services\AggregatRoots\RegattaServices\RegattaService.cs" />
+    <Compile Include="Services\AggregatRoots\SocialEventServices\EagerDisconnectedSocialEventService.cs" />
+    <Compile Include="Services\AggregatRoots\SocialEventServices\LazyConnectedSocialEventService.cs" />
+    <Compile Include="Services\AggregatRoots\SocialEventServices\SocialEventService.cs" />
+    <Compile Include="Services\AggregatRoots\TeamServices\EagerDisconnectedTeamService.cs" />
+    <Compile Include="Services\AggregatRoots\TeamServices\InternalTeamService.cs" />
+    <Compile Include="Services\AggregatRoots\TeamServices\LazyConnectedTeamService.cs" />
+    <Compile Include="Services\AggregatRoots\TeamServices\TeamService.cs" />
+    <Compile Include="Services\AggregatRoots\UserServices\EagerDisconnectedUserService.cs" />
+    <Compile Include="Services\AggregatRoots\UserServices\InternalUserService.cs" />
+    <Compile Include="Services\AggregatRoots\UserServices\LazyConnectedUserService.cs" />
+    <Compile Include="Services\AggregatRoots\UserServices\UserService.cs" />
+    <Compile Include="Services\BaseServices\EagerDisconnectedService.cs" />
+    <Compile Include="Services\BaseServices\InternalService.cs" />
+    <Compile Include="Services\BaseServices\LazyConnectedService.cs" />
+    <Compile Include="Services\BoatServices\BoatService.cs" />
+    <Compile Include="Services\BoatServices\EagerDisconnectedBoatService.cs" />
+    <Compile Include="Services\BoatServices\LazyConnectedBoatService.cs" />
+    <Compile Include="Services\EmailServices\EagerDisconnectedEmailService.cs" />
+    <Compile Include="Services\EmailServices\EmailService.cs" />
+    <Compile Include="Services\EmailServices\InternalEmailService.cs" />
+    <Compile Include="Services\EmailServices\LazyConnectedEmailService.cs" />
+    <Compile Include="Services\Junctions\ClubsEmails\ClubsEmailsService.cs" />
+    <Compile Include="Services\Junctions\ClubsPhoneNumbers\ClubsPhoneNumbersService.cs" />
+    <Compile Include="Services\Junctions\Clubs_Users_UserRoles_JunctionsService\LazyConnectedClubs_Users_UserRoles_JunctionService.cs" />
+    <Compile Include="Services\Junctions\RaceEvents_Users_UserRoles_JunctionsServices\RaceEvents_Users_UserRoles_JunctionsService.cs" />
+    <Compile Include="Services\Junctions\Regattas_Users_UserRoles_JunctionsService\Regattas_Users_UserRoles_JunctionsService.cs" />
+    <Compile Include="Services\Junctions\RegisteredUserServices\RegisteredUserService.cs" />
+    <Compile Include="Services\Junctions\RegisteredUserSocialEventServices\RegisteredUserSocialEventService.cs" />
+    <Compile Include="Services\Junctions\SocialEvents_Users_UserRoles_JunctionsServices\SocialEvents_Users_UserRoles_JunctionsService.cs" />
+    <Compile Include="Services\Junctions\TeamsRaceEvents\TeamRaceEventService.cs" />
+    <Compile Include="Services\Junctions\TeamsRegisteredUsers\TeamsRegisteredUserService.cs" />
+    <Compile Include="Services\Junctions\UserRoleServices\UserRoleService.cs" />
+    <Compile Include="Services\Locator\ServiceLocator.cs" />
+    <Compile Include="Services\PhoneNumberServices\EagerDisconnectedPhoneNumberService.cs" />
+    <Compile Include="Services\PhoneNumberServices\InternalPhoneNumberService.cs" />
+    <Compile Include="Services\PhoneNumberServices\LazyConnectedPhoneNumberService.cs" />
+    <Compile Include="Services\PhoneNumberServices\PhoneNumberService.cs" />
+    <Compile Include="Services\ResultServices\EagerDisconnectedResultService.cs" />
+    <Compile Include="Services\ResultServices\LazyConnectedResultService.cs" />
+    <Compile Include="Services\ResultServices\ResultService.cs" />
+    <Compile Include="Utilities\Context.cs" />
+    <Compile Include="Utilities\DbEntityAdder.cs" />
+    <Compile Include="Utilities\DbEntityExistensChecker.cs" />
+    <Compile Include="Utilities\NullCheck.cs" />
+    <Compile Include="Utilities\Permissions.cs" />
+    <Compile Include="Utilities\RoleHandlers\ClubRoleHandler.cs" />
+    <Compile Include="Utilities\RoleHandlers\RaceEventRoleHandler.cs" />
+    <Compile Include="Utilities\RoleHandlers\RegattaRoleHandler.cs" />
+    <Compile Include="Utilities\RoleHandlers\RoleHandler.cs" />
+    <Compile Include="Utilities\RoleHandlers\SocialEventRoleHandler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{8563c70b-a5f6-4000-89e4-b43584a4961c}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

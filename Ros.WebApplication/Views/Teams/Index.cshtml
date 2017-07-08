@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Ros.WebApplication.Models.ViewModels.TeamViewModels.TeamIndexViewModel>
+
+@{
+    ViewBag.Title = "Team Index";
+}
+
+<h2>Team Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TeamNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TeamName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EntryNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EntryName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TeamNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TeamName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Entry.EntryNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Entry.EntryName)
+        </td>
+        <td>
+            @Html.ActionLink("Add Users To Team", "AddUsers", new { id = item.Id }) |
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+</table>

@@ -1,0 +1,110 @@
+﻿@model IEnumerable<Ros.WebApplication.Models.ViewModels.RaceEventModels.RaceEventIndexViewModel>
+
+@{
+    ViewBag.Title = "RaceEvents Index";
+}
+
+<h2>RaceEvents Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaxParticipants)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Class)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegattaName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegattaStartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegattaEndDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegattaFee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegattaDescription)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fee)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EndDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaxParticipants)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Class)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Regatta.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Regatta.StartDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Regatta.EndDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Regatta.Fee)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Regatta.Description)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+</table>
